@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Bitter</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="page">
+  <h1>Bitter</h1>
+  <div class="metanav">
+  </div>
+  {% if message %}
+    <div class="flash">{{ message }}</div>
+  {% endif %}
+  {% block body %}{% endblock %}
+</div>

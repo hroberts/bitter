@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% if decimal_out %}
+        <p>bits:{{ bits_in }} -> tens:{{ decimal_out }}</p>
+    {% endif %}
+    {% if bits_out %}
+        <p>tens:{{ decimal_in }} -> bits:{{ bits_out }}</p>
+    {% endif %}
+
+    <form action="{{ url_for('bitter') }}" method="GET" class="bitter">
+      <dl>
+          <dt>tens:
+          <dd><input type="text" size="30" name="decimal">
+          <dt>bits:
+          <dd><input type="text" size="30" name="bits">
+          <dd><input type="submit" value="GO">
+      </dl>
+    </form>
+{% endblock %}
